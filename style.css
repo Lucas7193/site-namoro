@@ -1,0 +1,137 @@
+/* Estilo geral do corpo do site */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #282c34;
+  color: #ffffff;
+  text-align: center;
+  padding: 40px 20px;
+  margin: 0;
+}
+
+/* Título principal */
+h1 {
+  font-size: 48px;
+  color: #ff69b4;
+  margin-bottom: 10px;
+}
+
+/* Parágrafos */
+p {
+  font-size: 22px;
+  color: #dcdcdc;
+  margin-bottom: 20px;
+}
+
+/* Estilo da galeria de fotos */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 colunas por linha */
+  gap: 30px; /* Espaço entre as imagens */
+  justify-items: center;
+  margin-top: 40px;
+}
+
+/* Imagens da galeria */
+.imagem {
+  width: 100%;
+  max-width: 200px; /* 📏 Tamanho menor das imagens */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+/* Efeito ao passar o mouse nas imagens */
+.imagem:hover {
+  transform: scale(1.1);
+}
+
+/* Estilo do botão */
+button {
+  background-color: #ff69b4;
+  color: #ffffff;
+  border: none;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 40px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #ff85c1;
+  transform: scale(1.05);
+}
+
+/* Estilo da mensagem surpresa */
+#mensagem {
+  font-size: 24px;
+  color: #ff69b4;
+  margin-top: 25px;
+}
+
+/* Emojis caindo */
+.emoji {
+  position: fixed;
+  top: 0;
+  font-size: 24px;
+  animation-name: cair;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  z-index: 9999;
+}
+
+@keyframes cair {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+/* Legendas das fotos */
+.galeria div p {
+  margin-top: 10px;
+  color: #ffc0cb;
+  font-size: 18px;
+}
+/* Estilos para telas pequenas (mobile-first) */
+@media screen and (max-width: 768px) {
+  .galeria {
+    grid-template-columns: repeat(2, 1fr); /* 2 imagens por linha em telas menores */
+  }
+
+  .imagem {
+    max-width: 150px; /* Imagens menores em telas pequenas */
+  }
+
+  h1 {
+    font-size: 36px; /* Título menor em telas pequenas */
+  }
+
+  p {
+    font-size: 20px; /* Parágrafos menores */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 28px; /* Título menor para telas muito pequenas */
+  }
+
+  p {
+    font-size: 18px; /* Parágrafos menores */
+  }
+
+  .galeria {
+    grid-template-columns: 1fr; /* Uma imagem por linha em telas muito pequenas */
+  }
+
+  .imagem {
+    max-width: 130px; /* Imagens ainda menores em telas pequenas */
+  }
+}
